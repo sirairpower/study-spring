@@ -1,8 +1,10 @@
-package Items;
+package items;
+
+import features.Feature;
 
 public interface Item {
 
     String getName();
 
-    void showFeatures(Feature ... features);
+    String showFeatures(Feature features);
 }

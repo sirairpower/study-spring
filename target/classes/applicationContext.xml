@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="study.properties"/>
+
+    <!-- Define your beans here -->
+    <bean id="highQuality" class="features.HighQualityFeature">
+        <property name="featureInfo" value="~~ Higher quality means you can get more excellent service."/>
+    </bean>
+    <bean id="saftyFeature" class="features.SaftyFeature">
+        <property name="featureInfo" value="~~ Must be safe or children."/>
+    </bean>
+    <bean id="simpleFeature" class="features.SimpleFeature">
+        <property name="featureInfo" value="~~ Simple structure may cause more fun."/>
+    </bean>
+
+    <bean id="toy" class="items.ToyItem">
+        <property name="featureOfToy" ref="saftyFeature"/>
+        <property name="email" value="${study.email}"/>
+        <property name="address" value="${study.address}"/>
+        <property name="phoneNumber">
+            <array>
+                <value>0912345678</value>
+                <value>03-4945668</value>
+                <value>02-2810611</value>
+                <value>0955843945</value>
+            </array>
+        </property>
+    </bean>
+    <!-- define the dependency -->
+
+
+</beans>
+
+
+
+
+
